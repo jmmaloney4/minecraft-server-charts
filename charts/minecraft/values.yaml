@@ -68,6 +68,20 @@ initContainers: []
 #           - vers=4
 extraVolumes: []
 
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+    # cert-manager.io/cluster-issuer: "letsencrypt-staging"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
 minecraftServer:
   # This must be overridden, since we can't accept this for the user.
   eula: "FALSE"
